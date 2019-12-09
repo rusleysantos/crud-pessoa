@@ -2,6 +2,7 @@
 using CadastroPessoa.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Servico.GerenciarPessoa
@@ -20,14 +21,15 @@ namespace Servico.GerenciarPessoa
         /// </summary>
         /// <param name="pessoa">Pessoa a ser deletada</param>
         /// <returns>Objeto de retorno com informações sobre a deleção</returns>
-        public Retorno Deletar(Pessoa pessoa)
+        public Retorno Deletar(int Cpf)
         {
             try
             {
-                _contexto.Pessoas.Remove(pessoa);
-                return new Retorno { Estado = "Sucesso", Id = pessoa.Id, Mensagem = "Usuário removido com sucesso" };
+                _contexto.Remove(_contexto.Pessoas.Single(a => a.Cpf == Cpf));
+                _contexto.SaveChanges();
+                return new Retorno { Estado = "Sucesso", Mensagem = "Usuário removido com sucesso" };
             }
-            catch
+            catch(Exception e)
             {
                 return new Retorno { Estado = "Erro", Mensagem = "Erro ao remover usuário" };
             }

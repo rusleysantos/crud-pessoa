@@ -41,10 +41,10 @@ namespace CadastroPessoa.Controllers
             return Ok(_obterPessoa.ObterPorCpf(Cpf));
         }
 
-        [HttpDelete]
-        public ActionResult Delete(Pessoa pessoa)
+        [HttpDelete("{Cpf}")]
+        public ActionResult Delete(int Cpf)
         {
-            return Ok(_deletarPessoa.Deletar(pessoa));
+            return Ok(_deletarPessoa.Deletar(Cpf));
         }
     }
 }
