@@ -32,6 +32,8 @@ namespace CadastroPessoa
             services.AddScoped(typeof(InserirPessoa));
             services.AddScoped(typeof(ObterPessoa));
             services.AddScoped(typeof(DeletarPessoa));
+            services.AddScoped(typeof(AlterarPessoa));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

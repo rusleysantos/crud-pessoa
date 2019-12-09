@@ -28,12 +28,21 @@ namespace Servico.GerenciarPessoa
                 _contexto.Add(pessoa);
                 _contexto.SaveChanges();
 
-                return new Retorno { Estado = "Sucesso", Id = pessoa.Id, Mensagem = "Usuário inserido com sucesso" };
+                return new Retorno
+                {
+                    Estado = "Sucesso",
+                    Id = pessoa.Id,
+                    Mensagem = "Usuário inserido com sucesso"
+                };
             }
             catch
             {
                 //TODO: Inserir notificação para o slack
-                return new Retorno { Estado = "Erro", Mensagem = "Erro ao inserir usuário" };
+                return new Retorno
+                {
+                    Estado = "Erro",
+                    Mensagem = "Erro ao inserir usuário"
+                };
             }
         }
     }

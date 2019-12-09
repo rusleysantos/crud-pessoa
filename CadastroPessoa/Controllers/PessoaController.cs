@@ -15,12 +15,17 @@ namespace CadastroPessoa.Controllers
         private InserirPessoa _inserirPessoa;
         private ObterPessoa _obterPessoa;
         private DeletarPessoa _deletarPessoa;
+        private AlterarPessoa _alterarPessoa;
 
-        public PessoaController(InserirPessoa inserirPessoa, ObterPessoa obterPessoa, DeletarPessoa deletarPessoa)
+        public PessoaController(InserirPessoa inserirPessoa,
+                                ObterPessoa obterPessoa,
+                                DeletarPessoa deletarPessoa,
+                                AlterarPessoa alterarPessoa)
         {
             _inserirPessoa = inserirPessoa;
             _obterPessoa = obterPessoa;
             _deletarPessoa = deletarPessoa;
+            _alterarPessoa = alterarPessoa;
         }
 
         [HttpPost]
@@ -45,6 +50,12 @@ namespace CadastroPessoa.Controllers
         public ActionResult Delete(int Cpf)
         {
             return Ok(_deletarPessoa.Deletar(Cpf));
+        }
+
+        [HttpPut]
+        public ActionResult Put(Pessoa pessoa)
+        {
+            return Ok(_alterarPessoa.Alterar(pessoa));
         }
     }
 }

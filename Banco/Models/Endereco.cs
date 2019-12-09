@@ -16,5 +16,6 @@ namespace CadastroPessoa.Models
         public int Cep { get; set; }
         public string Bairro { get; set; }
         public string Uf { get; set; }
+        public int PessoaId { get; set; }
     }
 }

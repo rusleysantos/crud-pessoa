@@ -27,11 +27,19 @@ namespace Servico.GerenciarPessoa
             {
                 _contexto.Remove(_contexto.Pessoas.Single(a => a.Cpf == Cpf));
                 _contexto.SaveChanges();
-                return new Retorno { Estado = "Sucesso", Mensagem = "Usuário removido com sucesso" };
+                return new Retorno
+                {
+                    Estado = "Sucesso",
+                    Mensagem = "Usuário removido com sucesso"
+                };
             }
-            catch(Exception e)
+            catch
             {
-                return new Retorno { Estado = "Erro", Mensagem = "Erro ao remover usuário" };
+                return new Retorno
+                {
+                    Estado = "Erro",
+                    Mensagem = "Erro ao remover usuário"
+                };
             }
         }
     }
