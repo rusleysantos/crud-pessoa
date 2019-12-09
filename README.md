@@ -1,2 +1,2 @@
-# Crud Pessoa Web
+# Crud Pessoa Api
 Back-End feito com C# .NET Core 2.2 da aplicação [CadastroPessoa](https://github.com/rusleysantos/crud-pessoa-web).
