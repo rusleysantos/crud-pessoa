@@ -8,19 +8,33 @@ namespace Servico.GerenciarPessoa
 {
     public class InserirPessoa
     {
-        public ContextoApi _contexto { get; set; }
 
-        InserirPessoa(ContextoApi contexto)
+        private ContextoApi _contexto;
+
+        public InserirPessoa(ContextoApi contexto)
         {
             _contexto = contexto;
         }
 
-        public bool Inserir(Pessoa pessoa)
+        /// <summary>
+        /// Método responsável por inserir pessoa.
+        /// </summary>
+        /// <param name="pessoa">Pessoa inserida pelo usuário</param>
+        /// <returns>True: Inserido com sucesso e False: Erro ao inserir</returns>
+        public Retorno Inserir(Pessoa pessoa)
         {
-            _contexto.Add(pessoa);
-            _contexto.SaveChanges();
+            try
+            {
+                _contexto.Add(pessoa);
+                _contexto.SaveChanges();
 
-            return true;
+                return new Retorno { Estado = "Sucesso", Id = pessoa.Id, Mensagem = "Usuário inserido com sucesso" };
+            }
+            catch
+            {
+                //TODO: Inserir notificação para o slack
+                return new Retorno { Estado = "Erro", Mensagem = "Erro ao inserir usuário" };
+            }
         }
     }
 }

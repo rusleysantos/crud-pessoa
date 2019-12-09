@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Servico.GerenciarPessoa;
 
 namespace CadastroPessoa
 {
@@ -28,6 +29,9 @@ namespace CadastroPessoa
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<ContextoApi>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.AddScoped(typeof(InserirPessoa));
+            services.AddScoped(typeof(ObterPessoa));
+            services.AddScoped(typeof(DeletarPessoa));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

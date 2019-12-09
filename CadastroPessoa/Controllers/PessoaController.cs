@@ -12,32 +12,39 @@ namespace CadastroPessoa.Controllers
     [Route("api/pessoa")]
     public class PessoaController : Controller
     {
-        public InserirPessoa _inserirPessoa { get; set; }
+        private InserirPessoa _inserirPessoa;
+        private ObterPessoa _obterPessoa;
+        private DeletarPessoa _deletarPessoa;
 
-        PessoaController(InserirPessoa inserirPessoa)
+        public PessoaController(InserirPessoa inserirPessoa, ObterPessoa obterPessoa, DeletarPessoa deletarPessoa)
         {
             _inserirPessoa = inserirPessoa;
+            _obterPessoa = obterPessoa;
+            _deletarPessoa = deletarPessoa;
         }
 
-        [HttpGet("inserir")]
-        public ActionResult InserirPessoa([FromBody] Pessoa pessoa)
+        [HttpPost]
+        public ActionResult Post([FromBody] Pessoa pessoa)
         {
-            _inserirPessoa.Inserir(pessoa);
-            return View();
+            return Ok(_inserirPessoa.Inserir(pessoa));
         }
 
-        // GET: Pessoa/Edit/5
-        public ActionResult Edit(int id)
+        [HttpGet]
+        public ActionResult Get()
         {
-            return View();
+            return Ok(_obterPessoa.ObterTodos());
         }
 
-        // GET: Pessoa/Delete/5
-        public ActionResult Delete(int id)
+        [HttpGet("ObterPorCpf/{Cpf}")]
+        public ActionResult ObterPorCpf(int Cpf)
         {
-            return View();
+            return Ok(_obterPessoa.ObterPorCpf(Cpf));
         }
 
-
+        [HttpDelete]
+        public ActionResult Delete(Pessoa pessoa)
+        {
+            return Ok(_deletarPessoa.Deletar(pessoa));
+        }
     }
 }
