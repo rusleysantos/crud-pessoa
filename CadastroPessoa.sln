@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroPessoa", "CadastroPessoa\CadastroPessoa.csproj", "{9BBD3572-0C21-44C1-BE7E-FD9BCCEDED9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banco", "Banco\Banco.csproj", "{60E7D2D6-FBF1-48ED-97B7-72F8CE2FB9C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servico", "Servico\Servico.csproj", "{F402F351-17EB-4207-BC0C-626D0EF1D509}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BBD3572-0C21-44C1-BE7E-FD9BCCEDED9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BBD3572-0C21-44C1-BE7E-FD9BCCEDED9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BBD3572-0C21-44C1-BE7E-FD9BCCEDED9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BBD3572-0C21-44C1-BE7E-FD9BCCEDED9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E7D2D6-FBF1-48ED-97B7-72F8CE2FB9C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E7D2D6-FBF1-48ED-97B7-72F8CE2FB9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E7D2D6-FBF1-48ED-97B7-72F8CE2FB9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E7D2D6-FBF1-48ED-97B7-72F8CE2FB9C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F402F351-17EB-4207-BC0C-626D0EF1D509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F402F351-17EB-4207-BC0C-626D0EF1D509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F402F351-17EB-4207-BC0C-626D0EF1D509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F402F351-17EB-4207-BC0C-626D0EF1D509}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {843D156A-3587-4442-A164-C50C10A40F99}
+	EndGlobalSection
+EndGlobal
